@@ -15,10 +15,8 @@ exports.notes = "_Project name_ shouldn't contain \"node\" or \"js\" and should 
   "be a unique ID not already in use at npm.hijack.moe.";
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = "you now need to copy .npmrc file from other project so that " +
-  "you can install our own packages ligle-*, which is configured in package.json " + 
-  "peerDependencies.\n " + 
-  "After that, you may execute project tasks with _grunt_. For " +
+exports.after = 
+  "You may execute project tasks with _grunt_. For " +
   "more information about installing and configuring Grunt, please see " +
   "the Getting Started guide:" +
   "\n\n" +
