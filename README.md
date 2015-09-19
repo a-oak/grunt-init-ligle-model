@@ -60,9 +60,7 @@ if you don't want to overwrite existing files._
 
 You might want to test that it works before you begin customizing the project:
 
-* run `npm install` to install the project's dependencies; it is necessary only if you have answered `no`
-  to the corresponding question
-* run `grunt all` to build the project and test that it works
+* run `grunt` to test the project
 
 ## Redefining default prompt answers
 
