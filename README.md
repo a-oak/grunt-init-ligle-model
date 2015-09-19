@@ -1,5 +1,5 @@
 
-# grunt-init-pack
+# grunt-init-ligle-model
 
 [grunt-init](http://gruntjs.com/project-scaffolding) template for a project that can have Node package and 
 [JSHint](jshint.com), [Mocha](http://visionmedia.github.io/mocha/)+[Chai](http://chaijs.com) tests,
