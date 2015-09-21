@@ -15,6 +15,7 @@ var logger = index.logger;
 var {%= model %}  = ligle.model.ModelBase.extend({
   __className: '{%= model_name %}',
   __upDir: '{%= model_name %}',
+
   init:function(obj){
     this._super(obj);
   },
