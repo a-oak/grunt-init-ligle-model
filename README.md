@@ -1,14 +1,24 @@
 
 # grunt-init-ligle-model
 
-[grunt-init](http://gruntjs.com/project-scaffolding) template for a project that can have Node package and 
-[JSHint](jshint.com), [Mocha](http://visionmedia.github.io/mocha/)+[Chai](http://chaijs.com) tests,
-[JSDoc](http://usejsdoc.org),
-[Watch](https://github.com/gruntjs/grunt-contrib-watch),
-[Copy](https://www.npmjs.com/package/grunt-contrib-copy),
-[Clean](https://www.npmjs.com/package/grunt-contrib-clean),
-[Blanket](https://github.com/alex-seville/grunt-blanket),
-[JSCS](http://jscs.info/overview)
+[grunt-init](http://gruntjs.com/project-scaffolding) template for a project that can have Node package.
+
+this template is mainly for writing model addon for [ligle-engine](https://github.com/a-oak/ligle-engine), here is an example:[ligle-model-member](https://github.com/a-oak/ligle-model-member)
+
+
+devDependencies :
+- [Mocha](http://visionmedia.github.io/mocha/)+[Chai](http://chaijs.com) tests,
+- [JSHint](jshint.com),
+- [JSCS](http://jscs.info/overview)
+- [watch](https://github.com/gruntjs/grunt-contrib-watch),
+- [copy](https://www.npmjs.com/package/grunt-contrib-copy),
+- [clean](https://www.npmjs.com/package/grunt-contrib-clean),
+- [concat](https://www.npmjs.com/package/grunt-contrib-concat),
+- [grunt-bump](https://github.com/vojtajina/grunt-bump),
+- [grunt-changelog](https://github.com/ericmatthys/grunt-changelog),
+- [grunt-env](https://github.com/jsoverson/grunt-env),
+- [grunt-git](https://github.com/rubenv/grunt-git),
+- [grunt-istanbul](https://github.com/taichi/grunt-istanbul),
 
 
 ## Getting started
@@ -82,9 +92,9 @@ Below supported prompt names are listed:
 * `node_version` - minimal Node.js version
 * `main` - main file
 * `npm_test` - NPM test command
-* `history_md` - to include or not `History.md` in the project files
-* `release_task` - to include or not release tasks into Gruntfile
 * `npm_install` - to run or not `npm install` command automatically
 
 ## License
-ligle
+Copyright (c) 2015 A-Oak Co. Ltd.
+
+under MIT license
