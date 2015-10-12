@@ -1,4 +1,4 @@
 {
   "lib/name.js": "lib/{%= model_name %}.js",
-  "test/name_test.js": "test/{%= model_name %}_test.js"
+  "test/unit/name_test.js": "test/unit/{%= model_name %}_test.js"
 }

@@ -238,3 +238,8 @@ public/images/upload/*/*.bmp
 *.log.*
 
 coverage*
+
+doc*
+
+changelog.txt
+test/coverage

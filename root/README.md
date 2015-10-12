@@ -1,5 +1,8 @@
 
 # {%= name %}
+[![Build Status](https://travis-ci.org/a-oak/{%= name %}.svg?branch=master)](https://travis-ci.org/a-oak/{%= name %})
+[![Build Status](https://travis-ci.org/a-oak/{%= name %}.svg?branch=develop)](https://travis-ci.org/a-oak/{%= name %})
+Copyright (c) 2015 [A-Oak](http://a-oak.com/) Co. Ltd. under MIT LICENSE.
 
 {%= description %}
 
@@ -26,5 +29,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}  
-Licensed under the LIGLE.
+Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %} at [A-Oak](http://a-oak.com/) Co. Ltd. under MIT LICENSE.

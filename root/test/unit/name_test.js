@@ -9,13 +9,15 @@ var ligle = require('ligle-engine')({
   },
 });
 
-
+var fs = require('fs');
+var requireHelper = require('../require-helper');
 /// 下面两个变量，辅助测试延迟相应。
 var delay = 100;// test must be delayed to avoid conflict
 var nTest = 1; // used for delay
 
 
-require('../lib/index.js')(ligle);
+requireHelper('index')(ligle);
+
 describe('{%= name %}',function(){
   var Model = ligle.model.{%= model %};
   before(function(done){
@@ -41,6 +43,7 @@ describe('{%= name %}',function(){
   after(function(done){
     ligle.db.dropDatabase(function(){
       ligle.db.close();
+      fs.rmdirSync('{%= model_name %}');
       done();
     });
   });

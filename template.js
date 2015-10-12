@@ -76,38 +76,18 @@ exports.template = function(grunt, init, done) {
       }),
       init.prompt("author_name"),
       init.prompt("author_email"),
-      init.prompt("author_url",function(value, data, done){
-        done(null,'https://git.hijack.moe/u/'+data.author_name);
-      }),
+      init.prompt("author_url"),
       init.prompt("version"),
       init.prompt("repository"),
-      init.prompt("homepage",function(value, data, done){
-        var url = data.repository.slice(0,-4);
-        done(null,url);
-      }),
-      init.prompt("bugs",function(value, data, done){
-        var url = data.repository.slice(0,-4);
-        done(null, url+'/issues');
-      }),
+      init.prompt("homepage"),
+      init.prompt("bugs"),
       getPrompt({
         name: "license",
         message: "Project license(s) (should be SPDX expression)",
-        "default": "LIGLE"
+        "default": "MIT"
       }),
       init.prompt("node_version", ">= 0.12.0"),
       init.prompt("npm_test", "grunt test"),
-      getPrompt({
-        name: "history_md",
-        message: "Would you like to include History.md in the project files?",
-        "default": "Y/n",
-        sanitize: convertYesNo
-      }),
-      getPrompt({
-        name: "release_task",
-        message: "Would you like to include release tasks into Gruntfile?",
-        "default": "Y/n",
-        sanitize: convertYesNo
-      }),
       getPrompt({
         name: "npm_install",
         message: "Would you like to run `npm install` command automatically after initialization of the project?",
@@ -126,39 +106,34 @@ exports.template = function(grunt, init, done) {
         {data: props, delimiters: 'init'});
 
       var devDepend = props.devDependencies = {
-        "chai": "^3.2.0",
+        "chai": "^3.0.0",
         "grunt": "^0.4.5",
-        "grunt-blanket": "0.0.8",
-        "grunt-cli": "^0.1.13",
+        "grunt-bump": "^0.6.0",
+        "grunt-changelog": "^0.3.1",
         "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-concat": "^0.5.1",
         "grunt-contrib-copy": "^0.8.1",
         "grunt-contrib-jshint": "^0.11.3",
         "grunt-contrib-watch": "^0.6.1",
+        "grunt-env": "^0.4.4",
+        "grunt-git": "^0.3.5",
+        "grunt-istanbul": "^0.6.1",
         "grunt-jscs": "^2.1.0",
-        "grunt-jsdoc": "^0.6.8",
         "grunt-mocha-test": "^0.12.7",
+        "istanbul": "^0.3.22",
+        "semver": "^5.0.3",
         "mocha": "^2.3.2",
       };
 
       var peerDepend = props.peerDependencies = {
-        "ligle-util": "~0.3.1",
-        "ligle-db": "~0.3.0",
-        "ligle-model": "~0.3.0",
-        "ligle-midware": "~0.3.0",
-        "ligle-engine": "~0.3.0",
+        "ligle-engine": "~0.4.0",
       };
 
-      if (props.release_task) {
-        devDepend["grunt-push-release"] = ">=0.1.8";
+      if (props.license !== "MIT") {
+        delete files["LICENSE"];
       }
       
       var files = init.filesToCopy(props);
-      if (props.license !== "LIGLE") {
-        delete files["LICENSE-LIGLE"];
-      }
-      if (! props.history_md) {
-        delete files["History.md"];
-      }
       
       // Actually copy (and process) files.
       init.copyAndProcess(files, props);
